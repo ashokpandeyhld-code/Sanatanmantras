@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>वैदिक देवी-देवता मंत्र एवं श्लोक | Sanatan Vedic Mantras</title>
+  <style>
+    :root {
+      --bg-color: #FAFAFA;
+      --card-bg: #FFFFFF;
+      --bhagwa-saffron: #FF9933;
+      --ochre-red: #B22222;
+      --deep-red: #8B0000;
+      --text-dark: #2B1810;
+      --gold-accent: #DAA520;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', 'Noto Sans Devanagari', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--ochre-red), var(--deep-red));
+      color: #FFFFFF;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      border-bottom: 5px solid var(--bhagwa-saffron);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: var(--bhagwa-saffron);
+      text-shadow: 1px 1px 2px #000;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #FFF8E7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background-color: #FFF;
+      border: 2px solid var(--ochre-red);
+      color: var(--ochre-red);
+      padding: 8px 18px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background-color: var(--bhagwa-saffron);
+      color: #FFF;
+      border-color: var(--bhagwa-saffron);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 2px solid var(--bhagwa-saffron);
+      box-shadow: 0 4px 12px rgba(178, 34, 34, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-header {
+      background-color: var(--ochre-red);
+      color: #FFFFFF;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .card-header h2 {
+      font-size: 1.5rem;
+      color: #FFF;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: var(--bhagwa-saffron);
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-top: 4px;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--bhagwa-saffron);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--deep-red);
+      font-weight: bold;
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+      border-bottom: 1px dashed var(--bhagwa-saffron);
+    }
+
+    .sanskrit-text {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--deep-red);
+      background-color: #FFF8F0;
+      padding: 10px;
+      border-left: 4px solid var(--bhagwa-saffron);
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .hindi-meaning {
+      font-size: 0.95rem;
+      color: #4A2E2B;
+      background-color: #FAFAFA;
+      padding: 10px;
+      border-left: 4px solid var(--ochre-red);
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--deep-red);
+      color: #FFF;
+      margin-top: 3rem;
+      border-top: 4px solid var(--bhagwa-saffron);
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: #FFD700;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ॐ सनातन वैदिक मंत्र एवं श्लोक ॐ</h1>
+    <p>वेदों एवं उपनिषदों से उद्धृत प्रमुख देवी-देवताओं के मंत्र एवं हिंदी अर्थ</p>
+  </header>
+
+  <div class="container">
+    <div class="filter-buttons">
+      <button class="filter-btn active" onclick="filterCategory('all')">सभी (All)</button>
+      <button class="filter-btn" onclick="filterCategory('god')">देवता (Gods)</button>
+      <button class="filter-btn" onclick="filterCategory('goddess')">देवी (Goddesses)</button>
+    </div>
+
+    <div class="cards-grid" id="cardsGrid">
+
+      <!-- Gayatri Mata / Surya -->
+      <div class="card" data-category="goddess">
+        <div class="card-header">
+          <h2>माँ गायत्री (Gayatri Mata)</h2>
+          <span class="tag">ऋग्वेद (Rigveda 3.62.10)</span>
+        </div>
+        <img class="card-img" src="https://images.unsplash.com/photo-1609101824199-7dd532822a10?auto=format&fit=crop&w=600&q=80" alt="Gayatri Mata">
+        <div class="card-body">
+          <div class="section-title">गायत्री मंत्र (Sanskrit Mantra)</div>
+          <div class="sanskrit-text">
+            ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो नः प्रचोदयात्॥
+          </div>
+          <div class="section-title">हिंदी अर्थ (Hindi Meaning)</div>
+          <div class="hindi-meaning">
+            हम उस प्राणस्वरूप, दुःखनाशक, सुखस्वरूप, श्रेष्ठ, तेजस्वी, पापनाशक, देवस्वरूप परमात्मा का ध्यान करते हैं। वह परमात्मा हमारी बुद्धि को सन्मार्ग की ओर प्रेरित करे।
+          </div>
+        </div>
+      </div>
+
+      <!-- Lord Shiva -->
+      <div class="card" data-category="god">
+        <div class="card-header">
+          <h2>भगवान शिव (Lord Shiva)</h2>
+          <span class="tag">ऋग्वेद (Rigveda 7.59.12)</span>
+        </div>
+        <img class="card-img" src="https://images.unsplash.com/photo-1616048057221-d688fa94e50d?auto=format&fit=crop&w=600&q=80" alt="Lord Shiva">
+        <div class="card-body">
+          <div class="section-title">महामृत्युंजय मंत्र (Sanskrit Mantra)</div>
+          <div class="sanskrit-text">
+            ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्।<br>उर्वारुकमिव बन्धनान्मृत्योर्मुक्षीय माऽमृतात्॥
+          </div>
+          <div class="section-title">हिंदी अर्थ (Hindi Meaning)</div>
+          <div class="hindi-meaning">
+            हम त्रिनेत्रधारी (तीनों लोकों को देखने वाले) और उत्तम सुगंधि से युक्त भगवान शिव का यजन करते हैं। जिस प्रकार पका हुआ खरबूजा बेल के बंधन से मुक्त हो जाता है, उसी प्रकार हम मृत्यु से मुक्त होकर अमरता को प्राप्त करें।
+          </div>
+        </div>
+      </div>
+
+      <!-- Lord Ganesha -->
+      <div class="card" data-category="god">
+        <div class="card-header">
+          <h2>भगवान गणेश (Lord Ganesha)</h2>
+          <span class="tag">गणपति अथर्वशीर्ष (Yajurveda Tradition)</span>
+        </div>
+        <img class="card-img" src="https://images.unsplash.com/photo-1567591377030-de198b7d5162?auto=format&fit=crop&w=600&q=80" alt="Lord Ganesha">
+        <div class="card-body">
+          <div class="section-title">गणेश श्लोक (Sanskrit Shloka)</div>
+          <div class="sanskrit-text">
+            वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+          </div>
+          <div class="section-title">हिंदी अर्थ (Hindi Meaning)</div>
+          <div class="hindi-meaning">
+            घुमावदार सूंड वाले, विशाल शरीर वाले, करोड़ों सूर्यों के समान तेज वाले हे देव गणेश! आप मेरे सभी कार्यों को बिना किसी बाधा के सदैव पूर्ण करें।
+          </div>
+        </div>
+      </div>
+
+      <!-- Goddess Lakshmi -->
+      <div class="card" data-category="goddess">
+        <div class="card-header">
+          <h2>माँ लक्ष्मी (Goddess Lakshmi)</h2>
+          <span class="tag">श्रीसूक्तम् (Rigveda Khila)</span>
+        </div>
+        <img class="card-img" src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=600&q=80" alt="Goddess Lakshmi">
+        <div class="card-body">
+          <div class="section-title">लक्ष्मी मन्त्र (Sanskrit Mantra)</div>
+          <div class="sanskrit-text">
+            ॐ हिरण्यवर्णां हरिणीं सुवर्णरजतस्रजाम्।<br>चन्द्रां हिरण्मयीं लक्ष्मीं जातवेदो म आवह॥
+          </div>
+          <div class="section-title">हिंदी अर्थ (Hindi Meaning)</div>
+          <div class="hindi-meaning">
+            हे अग्निदेव! सोने के वर्ण वाली, हरिण के समान चंचल, सोने-चांदी के हार धारण करने वाली, चंद्रमा की भांति प्रकाशमान और स्वर्णमयी लक्ष्मी देवी का मेरे घर में आह्वान करें।
+          </div>
+        </div>
+      </div>
+
+      <!-- Lord Vishnu -->
+      <div class="card" data-category="god">
+        <div class="card-header">
+          <h2>भगवान विष्णु (Lord Vishnu)</h2>
+          <span class="tag">यजुर्वेद (Yajurveda)</span>
+        </div>
+        <img class="card-img" src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80" alt="Lord Vishnu">
+        <div class="card-body">
+          <div class="section-title">विष्णु मन्त्र (Sanskrit Mantra)</div>
+          <div class="sanskrit-text">
+            ॐ शांताकारं भुजगशयनं पद्मनाभं सुरेशम्।<br>विश्वाधारं गगनसदृशं मेघवर्णं शुभांगम्॥
+          </div>
+          <div class="section-title">हिंदी अर्थ (Hindi Meaning)</div>
+          <div class="hindi-meaning">
+            जिनकी आकृति अति शांत है, जो शेषनाग की शैया पर शयन करते हैं, जिनकी नाभि में कमल है, जो देवताओं के स्वामी, जगत के आधार, आकाश के समान सर्वव्यापी और बादलों के समान सुंदर रंग वाले हैं, उन भगवान विष्णु को हम नमन करते हैं।
+          </div>
+        </div>
+      </div>
+
+      <!-- Goddess Saraswati -->
+      <div class="card" data-category="goddess">
+        <div class="card-header">
+          <h2>माँ सरस्वती (Goddess Saraswati)</h2>
+          <span class="tag">ऋग्वेद (Rigveda 1.3.12)</span>
+        </div>
+        <img class="card-img" src="https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=600&q=80" alt="Goddess Saraswati">
+        <div class="card-body">
+          <div class="section-title">सरस्वती श्लोक (Sanskrit Shloka)</div>
+          <div class="sanskrit-text">
+            महो अर्णः सरस्वती प्र चेतयति केतुना।<br>धियो विश्वा वि राजति॥
+          </div>
+          <div class="section-title">हिंदी अर्थ (Hindi Meaning)</div>
+          <div class="hindi-meaning">
+            सत्य ज्ञान की चेतना देने वाली माँ सरस्वती ज्ञान के विशाल सागर को प्रकाशित करती हैं और हमारी सभी बुद्धियों तथा शुभ विचारों को जागृत और सुशोभित करती हैं।
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>॥ धर्मो रक्षति रक्षितः ॥</p>
+    <p>© सनातन वैदिक ज्ञान संगम</p>
+  </footer>
+
+  <script>
+    function filterCategory(category) {
+      const cards = document.querySelectorAll('.card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
